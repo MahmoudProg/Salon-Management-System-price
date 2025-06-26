@@ -5,6 +5,9 @@
   <title>خطة أسعار نظام صالون الحلاقة</title>
   <style>
 
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -90,15 +93,9 @@
     *{
       font-family: sans-serif;
       line-height: 2;
+      transition: all 0.9s ease;
     }
-    /* @media (min-width: 1400px) {
-        *{ line-height: 3; }
-    }
-    @media (min-width: 1200px) {
-    }
-    @media (min-width: 992px) {
-         *{ line-height: 1.6; }
-    } */
+   
   </style>
 </head>
 <body>
@@ -123,40 +120,41 @@
   <h2>خطط الأسعار:</h2>
 
   <div class="plan">
-    <div class="plan-title"><span class="green-dot">●</span> <strong>1) الخطة المقطوعة (One-time Payment):</strong></div>
-    <ul>
-      <li>دفع لمرة واحدة وامتلاك النظام بالكامل.</li>
-      <li>استضافة مجانية لمدة سنة.</li>
-      <li>دعم فني مجاني لأول شهر.</li>
-      <li>جميع الشاشات الأساسية + الإضافية.</li>
-      <hr>
-      <li><strong>السعر: 6000 جنيه مصري</strong></li>
-    </ul>
-  </div>
-
-  <div class="plan">
-    <div class="plan-title"> <span class="yellow-dot">●</span> <strong>2) الخطة الشهرية (Basic Subscription):</strong> </div>
+    <div class="plan-title"> <span class="yellow-dot">●</span> <strong>1) الخطة الشهرية (Basic Subscription):</strong> </div>
     <ul>
       <li>بدون دفع مقدم.</li>
       <li>اشتراك شهري ثابت.</li>
       <li>يشمل الشاشات الأساسية فقط (بدون Dashboard أو إدارة المستخدمين).</li>
-      <li>دعم شهري محدود (2 تعديل شهريًا فقط).</li>
       <hr>
       <li><strong>السعر: 200 جنيه شهريًا</strong></li>
     </ul>
   </div>
 
   <div class="plan">
-    <div class="plan-title"><span class="blue-dot">●</span><strong>3) الخطة المرنة (Hybrid Plan):</strong></div>
+    <div class="plan-title"><span class="blue-dot">●</span><strong>2) الخطة المرنة (Hybrid Plan):</strong></div>
     <ul>
       <li>تدفع مرة واحدة للتجهيز الأولي (1000 جنيه).</li>
       <li>ثم اشتراك شهري منخفض (150 جنيه/شهر).</li>
       <li>يشمل الشاشات الأساسية + Dashboard.</li>
-      <li>دعم شهري موسع + تحديثات مجانية.</li>
       <hr>
       <li><strong>السعر: 1000 جنيه أول مرة + 150 جنيه مصري شهرياً</strong></li>
     </ul>
   </div>
+
+  <div class="plan">
+    <div class="plan-title"><span class="green-dot">●</span> <strong>3) الخطة الشاملة (One-time Payment):</strong></div>
+    <ul>
+      <li>دفع لمرة واحدة وامتلاك النظام بالكامل.</li>
+      <li>استضافة مجانية لمدة سنة.</li>
+      <li>جميع الشاشات الأساسية + الإضافية.</li>
+      <hr>
+      <li><strong>السعر: 6000 جنيه مصري</strong></li>
+    </ul>
+  </div>
+
+ 
+
+
 
   <h2>مقارنة بين الخطط:</h2>
 
@@ -164,23 +162,23 @@
     <thead>
       <tr>
         <th>الميزة</th>
-        <th>الخطة المقطوعة</th>
         <th>الخطة الشهرية</th>
         <th>الخطة المرنة</th>
+        <th>الخطة الشاملة</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>ملكية النظام</td>
+        <td class="cross">✘</td>
+        <td class="cross">✘</td>
         <td class="check">✔</td>
-        <td class="cross">✘</td>
-        <td class="cross">✘</td>
       </tr>
       <tr>
         <td>استضافة </td>
+        <td class="check">✔ ( طالما الاشتراك ساري )</td>
+        <td class="check">✔ ( طالما الاشتراك ساري )</td>
         <td class="check">✔ ( سنة مجانية )</td>
-        <td class="check">✔ ( طالما الاشتراك ساري )</td>
-        <td class="check">✔ ( طالما الاشتراك ساري )</td>
       </tr>
       <tr>
         <td>الشاشات الأساسية</td>
@@ -190,34 +188,115 @@
       </tr>
       <tr>
         <td>الشاشات الإضافية</td>
-        <td class="check">✔</td>
         <td class="cross">✘</td>
         <td>✔ (بعضها)</td>
+        <td class="check">✔</td>
       </tr>
       <tr>
         <td>عدد المستخدمين</td>
-        <td>غير محدود</td>
         <td>حتى 3 مستخدمين</td>
         <td>حتى 5 مستخدمين</td>
+        <td>غير محدود</td>
       </tr>
-      <tr>
-        <td>الدعم الفني</td>
-        <td>شهر مجاني</td>
-        <td>محدود</td>
-        <td>متوسط</td>
-      </tr>
-      <tr>
-        <td>التعديلات المستقبلية</td>
-        <td>مجانية أول شهر</td>
-        <td>محدودة</td>
-        <td>بعضها مشمول</td>
-      </tr>
+  <tr>
+    <td>الدعم الفني</td>
+    <td><a href="#support-plans">حسب اختيارك للباقة</a></td>
+    <td><a href="#support-plans">حسب اختيارك للباقة</a></td>
+    <td>شهر مجاني + <a href="#support-plans">حسب اختيارك للباقة</a></td>
+  </tr>
+  <tr>
+    <td>التعديلات المستقبلية</td>
+    <td><a href="#modification-plans">حسب اختيارك للباقة</a></td>
+    <td><a href="#modification-plans">حسب اختيارك للباقة</a></td>
+    <td>شهر مجاني + <a href="#modification-plans">حسب اختيارك للباقة</a></td>
+  </tr>
+
+
     </tbody>
   </table>
 
+ 
+
   <div class="note">
-    ملاحظة: جميع الخطط أونلاين ومتوافقة مع جميع الأجهزة (موبايل - كمبيوتر - تابلت).
+     <strong>ملاحظة :</strong>  جميع الخطط أونلاين ومتوافقة مع جميع الأجهزة (موبايل - كمبيوتر - تابلت).
   </div>
+
+
+  <h2 id="support-plans">باقات الدعم الفني بعد التعاقد:</h2>
+
+  <div class="plan">
+    <div class="plan-title"><strong>1) الباقة الأساسية - 100 جنيه شهرياً</strong></div>
+    <ul>
+      <li>الاستجابة خلال 48 ساعة.</li>
+      <li>حل الأعطال الطارئة فقط (مشكلة في الدخول - توقف النظام - مشكلة في الطباعة).</li>
+      <li>لا تشمل أي تعديلات على النظام.</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-title"><strong>2) الباقة المتوسطة - 200 جنيه شهرياً</strong></div>
+    <ul>
+      <li>الاستجابة خلال 24 ساعة.</li>
+      <li>حل الأعطال + تعديلين بسيطين شهريًا.</li>
+      <li>استشارات ومتابعة دورية عند الحاجة.</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-title"><strong>3) الباقة المتقدمة - 300 جنيه شهرياً</strong></div>
+    <ul>
+      <li>استجابة سريعة خلال 12 ساعة.</li>
+      <li>دعم فني كامل + عدد غير محدود من الاستشارات.</li>
+      <li>حتى 5 تعديلات شهرية (تعديلات بسيطة).</li>
+      <li>أولوية في تنفيذ الطلبات.</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <strong>ملاحظة :</strong> يمكنك اختيار الباقة المناسبة بعد انتهاء فترة الدعم المجاني.
+  </div>
+
+   <div class="note">
+    <strong>تعريف الدعم الفني :</strong> المقصود بطلب دعم فني هو: الرد على استفسارات - حل أعطال - متابعة تشغيل النظام.  
+    <br>
+    <strong>تعريف التعديلات :</strong> أي تعديل على شكل أو وظائف النظام مثل: تعديل شكل فاتورة - إضافة حقل - تعديل شاشة.
+  </div>
+
+
+  <h2 id="modification-plans">باقات التعديلات المستقبلية:</h2>
+
+  <div class="plan">
+    <div class="plan-title"><strong>1) باقة التعديلات البسيطة - 150 جنيه شهرياً</strong></div>
+    <ul>
+      <li>حتى 2 تعديل شهريًا.</li>
+      <li>تشمل التعديلات الصغيرة فقط (تغيير نصوص - تعديل سعر - تعديل شكل طباعة الفاتورة).</li>
+      <li>لا تشمل إضافة شاشات أو تغييرات كبيرة في النظام.</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-title"><strong>2) باقة التعديلات المتوسطة - 300 جنيه شهرياً</strong></div>
+    <ul>
+      <li>حتى 5 تعديلات شهريًا.</li>
+      <li>تشمل تعديلات متوسطة (تعديل تقارير - إضافة أعمدة جديدة - تعديلات شكلية في أكثر من صفحة).</li>
+      <li>لا تشمل تطويرات ضخمة أو إضافة شاشات جديدة بالكامل.</li>
+    </ul>
+  </div>
+
+  <div class="plan">
+    <div class="plan-title"><strong>3) باقة التعديلات الموسعة - 500 جنيه شهرياً</strong></div>
+    <ul>
+      <li>عدد غير محدود من التعديلات الصغيرة والمتوسطة خلال الشهر.</li>
+      <li>تشمل أي تعديل على الشاشات الحالية.</li>
+      <li>أولوية في تنفيذ الطلبات.</li>
+      <li>لا تشمل تطويرات ضخمة (زي بناء شاشات جديدة كاملة... يتم حسابها بسعر منفصل).</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <strong>ملاحظة :</strong>  في حالة طلب تعديل يتجاوز حدود الباقة، سيتم تقديم عرض سعر خاص قبل التنفيذ.
+  </div>
+
 </div>
 
 </body>

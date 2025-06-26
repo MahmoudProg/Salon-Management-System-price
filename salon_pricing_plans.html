@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>اختيار خطط نظام صالون الحلاقة</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      direction: rtl;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #summary {
+      background-color: #eafaf1;
+      padding: 15px;
+      margin-top: 20px;
+      border-right: 5px solid #27ae60;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>اختيار خطط نظام صالون الحلاقة</h1>
+
+  <h2>خطط الأسعار:</h2>
+  <label><input type="radio" name="mainPlan" value="200" data-name="الخطة الشهرية"> الخطة الشهرية (200 جنيه شهريًا)</label>
+  <label><input type="radio" name="mainPlan" value="150+1000" data-name="الخطة المرنة"> الخطة المرنة (150 شهري + 1000 تجهيز أولي)</label>
+  <label><input type="radio" name="mainPlan" value="6000" data-name="الخطة الشاملة"> الخطة الشاملة (6000 جنيه مرة واحدة)</label>
+
+  <h2>باقات الدعم الفني:</h2>
+  <label><input type="radio" name="supportPlan" value="100" data-name="الباقة الأساسية"> الباقة الأساسية (100 جنيه)</label>
+  <label><input type="radio" name="supportPlan" value="200" data-name="الباقة المتوسطة"> الباقة المتوسطة (200 جنيه)</label>
+  <label><input type="radio" name="supportPlan" value="300" data-name="الباقة المتقدمة"> الباقة المتقدمة (300 جنيه)</label>
+
+  <h2>باقات التعديلات المستقبلية:</h2>
+  <label><input type="radio" name="modPlan" value="150" data-name="الباقة البسيطة"> الباقة البسيطة (150 جنيه)</label>
+  <label><input type="radio" name="modPlan" value="300" data-name="الباقة المتوسطة"> الباقة المتوسطة (300 جنيه)</label>
+  <label><input type="radio" name="modPlan" value="500" data-name="الباقة الموسعة"> الباقة الموسعة (500 جنيه)</label>
+
+  <button onclick="calculateTotal()">احسب الإجمالي</button>
+
+  <div id="summary"></div>
+</div>
+
+<script>
+function calculateTotal() {
+  let total = 0;
+  let summary = '';
+
+  const mainPlan = document.querySelector('input[name="mainPlan"]:checked');
+  const supportPlan = document.querySelector('input[name="supportPlan"]:checked');
+  const modPlan = document.querySelector('input[name="modPlan"]:checked');
+
+  if (mainPlan) {
+    summary += '✅ خطة الأسعار: ' + mainPlan.dataset.name + '<br>';
+    total += eval(mainPlan.value);
+  }
+  if (supportPlan) {
+    summary += '✅ باقة الدعم الفني: ' + supportPlan.dataset.name + '<br>';
+    total += parseInt(supportPlan.value);
+  }
+  if (modPlan) {
+    summary += '✅ باقة التعديلات: ' + modPlan.dataset.name + '<br>';
+    total += parseInt(modPlan.value);
+  }
+
+  summary += '<br><strong>✅ الإجمالي الشهري التقريبي: ' + total + ' جنيه</strong>';
+  document.getElementById('summary').innerHTML = summary;
+}
+</script>
+</body>
+</html>
